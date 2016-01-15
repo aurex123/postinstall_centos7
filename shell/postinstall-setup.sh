@@ -34,4 +34,6 @@ if [[ ! -f /postinstall/postinstall-ok-setup ]]; then
 	# Bandera de inicializacion OK
 	touch /postinstall/postinstall-ok-setup
 	echo -e "\n\n----------\n- Script de postinstall ejecutado /postinstall/postinstall-ok-setup\n----------\n\n\n"
+else
+	echo -e "\nYa se corrio este script\n"
 fi
