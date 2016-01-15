@@ -3,11 +3,10 @@
 
 Uso:
 ```
-wget http://www.uan.edu.mx/d/postinstall.zip
-unzip postinstall.zip -d postinstall
-cd postinstall
+wget https://github.com/aurex123/postinstall/archive/v0.1.zip
+unzip postinstall.zip
+cd postinstall-0.1
 chmod +x postinstall.sh
-
 
 USER=aurex \
 PASS=PASSWORD \
