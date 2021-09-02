@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+srand( time() ^ ($$ + ($$ << 15)) );
+my @v = qw ( a e i o u y );
+my @c = qw ( b c d f g h j k l m n p q r s t v w x z );
+my @s = qw ( ! - _ ! * ! );
+
+for (1..12) {
+    my ($flip, $str) = (0,'');
+    $sign = $s[rand(6)];
+    $str .= ($flip++ % 2) ? $v[rand(6)] : $c[rand(20)] for 1 .. 9;
+    $str =~ s/(....)/$1 . int rand(10)/e;
+    $str .= $sign;
+    $str = ucfirst $str if rand() > 0.5;
+    print "$str\n";
+}

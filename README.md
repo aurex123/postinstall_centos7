@@ -1,8 +1,10 @@
 # Postinstall
-##Post instalacion de una VM.
+
+## Post instalacion de un container LXC Centos 8
 
 Uso:
-```
+
+```bash
 wget http://www.uan.edu.mx/d/postinstall.zip
 unzip postinstall.zip -d postinstall
 cd postinstall
@@ -16,7 +18,8 @@ HOST=myapp.uan.mx \
 ./postinstall.sh
 ```
 
-##Ajustes
+## Ajustes
+
 - Actualiza paquetes.
 - Instala algunos paquetes básicos según la version del server.
 
@@ -33,4 +36,4 @@ HOST=myapp.uan.mx \
 
 - Establece zona horaria a America/Mazatlan
 - Sincroniza la hora con ntp
-- Mensaje del dia
+- Mensaje del día

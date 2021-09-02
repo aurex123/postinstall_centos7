@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+
+
+use Term::ReadKey;
+
+
+ReadMode('noecho');
+
+print "Escribe password: ";
+$pass = <>;
+
+print "\nRepite password : ";
+$pass2 = <>;
+
+ReadMode(0);
+
+
+print "\n";
+if ($pass eq $pass2) {
+  chomp($pass);
+
+  $salt = join'', map +(0..9,'a'..'z','A'..'Z')[rand(10+26*2)], 1..8;
+  print "\n". crypt($pass,"\$6\$".$salt."\$") . "\n";
+} else {
+  print "Passwords no coinciden"
+}

@@ -15,7 +15,7 @@ if [[ ! -z "$USER" ]]; then
 
 	# Instala keys del usuario
 	if [[ ! -z "$KEY_URL" ]]; then
-		mkdir -pm 700 /home/$USER/.ssh &&
+		mkdir -pm 700 /home/$USER/.ssh && \
 		curl -k $KEY_URL >> /home/$USER/.ssh/authorized_keys && \
 		chmod 0600 /home/$USER/.ssh/authorized_keys && \
 		chown -R $USER /home/$USER/.ssh

@@ -4,12 +4,14 @@
 
 if [[ ! -f /postinstall/postinstall-ok-setup ]]; then
 
-	./shell/01-paquetes-Centos7.sh
+	./shell/01-paquetes-Centos8.sh
 	./shell/02-user.sh
 	./shell/03-tunning.sh
 
 	# Deshabilita SELinux
-	sed -i "s/=enforcing/=disabled/" /etc/selinux/config
+	if [[ -f /etc/selinux/config ]]; then
+		sed -i "s/=enforcing/=disabled/" /etc/selinux/config
+	fi
 
 	# Que no espere el DNS reverso
 	echo "UseDNS no" >> /etc/ssh/sshd_config
@@ -17,11 +19,13 @@ if [[ ! -f /postinstall/postinstall-ok-setup ]]; then
 	#zona horaria
 	timedatectl set-timezone America/Mazatlan
 
-	# Inicia sincronizacion de horario
-	systemctl enable ntpd
+	if systemctl status ntpd >/dev/null; then
+		# Inicia sincronizacion de horario
+		systemctl enable ntpd
 
-	# Para sincronizar de una vez
-	ntpdate 0.us.pool.ntp.org
+		# Para sincronizar de una vez
+		ntpdate 0.us.pool.ntp.org
+	fi
 
 
 	# Mensaje del dia

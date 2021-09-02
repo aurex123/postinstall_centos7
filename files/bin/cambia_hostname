@@ -1,0 +1,32 @@
+#!/bin/bash -e
+# set hostname
+
+[ -z "$1" ] && echo "Define el hostname anterior" && exit 0
+
+NEWHOST=$2
+
+[ -z "$NEWHOST" ] && echo "Define el hostname nuevo" && exit 0
+
+old=$1
+
+for file in \
+   /etc/exim4/update-exim4.conf.conf \
+   /etc/printcap \
+   /etc/hostname \
+   /etc/hosts \
+   /etc/ssh/ssh_host_rsa_key.pub \
+   /etc/ssh/ssh_host_dsa_key.pub \
+   /etc/ssh/ssh_host_ecdsa_key.pub \
+   /etc/ssh/ssh_host_ed25519_key.pub \
+   /etc/mailname \
+   /etc/postfix/main.cf \
+   /etc/motd \
+   /etc/ssmtp/ssmtp.conf
+do
+   [ -f $file ] && grep $old $file && echo -e "-------> $file\n\n"
+   [ -f $file ] && sed -i -e "s:$old:$NEWHOST:g" $file
+done
+
+#hostname $NEWHOST
+
+exit 0

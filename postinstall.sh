@@ -7,14 +7,14 @@ if [[ "$USER" == "root" ]]; then
   echo
   echo "USER=aurex \ "
   echo "PASS=PASSWORD \ "
-  echo "KEY_URL=https://dl.dropboxusercontent.com/s/j3xj1n5nqgur9af/Mi-public-key.pub \ "
+  echo "KEY_URL=https://gist.githubusercontent.com/aurexs/d27be135ac167559ac0f4abd4dae7714/raw/3ede1a447776818a0f1e1ab0a6f721db7b052a2f/id_rsa.pub \ "
   echo "HOST=myapp.uan.mx \ "
   echo "./postinstall.sh"
 
   exit 1
 fi
 
-if [[ -z $HOST ]]; then
+if [[ -z "$HOST" ]]; then
   echo
   echo "Necesitas setear las variables de entorno y correr el ./postinstall.sh"
   echo "USER, PASS y KEY_URL son opcionales."
@@ -22,7 +22,7 @@ if [[ -z $HOST ]]; then
   echo
   echo "USER=aurex \ "
   echo "PASS=PASSWORD \ "
-  echo "KEY_URL=https://dl.dropboxusercontent.com/s/j3xj1n5nqgur9af/Mi-public-key.pub \ "
+  echo "KEY_URL=https://gist.githubusercontent.com/aurexs/d27be135ac167559ac0f4abd4dae7714/raw/3ede1a447776818a0f1e1ab0a6f721db7b052a2f/id_rsa.pub \ "
   echo "HOST=myapp.uan.mx \ "
   echo "./postinstall.sh"
 
