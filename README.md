@@ -5,15 +5,14 @@
 Uso:
 
 ```bash
-wget http://www.uan.edu.mx/d/postinstall.zip
-unzip postinstall.zip -d postinstall
-cd postinstall
+wget https://github.com/aurexs/postinstall/archive/v0.2.zip
+unzip postinstall.zip
+cd postinstall-0.1
 chmod +x postinstall.sh
-
 
 USER=aurex \
 PASS=PASSWORD \
-KEY_URL=https://dl.dropboxusercontent.com/s/5asd5asd5as5d/Mi-public-key.pub \
+KEY_URL=https://gist.githubusercontent.com/aurexs/d27be135ac167559ac0f4abd4dae7714/raw/3ede1a447776818a0f1e1ab0a6f721db7b052a2f/id_rsa.pub \
 HOST=myapp.uan.mx \
 ./postinstall.sh
 ```
