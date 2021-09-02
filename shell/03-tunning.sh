@@ -1,11 +1,5 @@
 #!/bin/bash
 
-
-# Deshabilita IPv6
-echo "NETWORKING_IPV6=no" >> /etc/sysconfig/network
-echo "IPV6INIT=no" >> /etc/sysconfig/network
-
-
 echo "
 
 # Increase the tcp-time-wait buckets pool size to prevent simple DOS attacks

@@ -6,15 +6,14 @@ if [[ ! -f /postinstall/postinstall-ok-setup ]]; then
 
 	./shell/01-paquetes-Centos8.sh
 	./shell/02-user.sh
-	./shell/03-tunning.sh
+	# ./shell/03-tunning.sh
+	./shell/04-sshd.sh
+	# ./shell/05-network.sh
 
 	# Deshabilita SELinux
 	if [[ -f /etc/selinux/config ]]; then
 		sed -i "s/=enforcing/=disabled/" /etc/selinux/config
 	fi
-
-	# Que no espere el DNS reverso
-	echo "UseDNS no" >> /etc/ssh/sshd_config
 
 	#zona horaria
 	timedatectl set-timezone America/Mazatlan

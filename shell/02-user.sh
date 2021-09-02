@@ -33,4 +33,4 @@ fi
 cp -rf ./files/root/.[a-zA-Z0-9]* /root/
 
 # Ejecutables
-chmod +x ./files/bin/* && cp -rf ./files/bin/* /usr/local/bin/
+chmod +x ./files/bin/* && cp -rf ./files/bin/* /usr/sbin/
