@@ -10,4 +10,7 @@ echo "DNS3=8.8.8.8" >> /etc/sysconfig/network
 echo "DOMAIN=se.local" >> /etc/sysconfig/network
 
 # Deshabilita para que Proxmox gestione el /etc/resolv.conf
-sed -i "s/.*[main].*/&\ndns=none/" /etc/NetworkManager/NetworkManager.conf
+
+systemctl disable systemd-resolved.service
+systemctl stop systemd-resolved
+sed -i "s/[main]/&\ndns=none/" /etc/NetworkManager/NetworkManager.conf

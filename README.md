@@ -11,9 +11,8 @@ cd postinstall-0.1
 chmod +x postinstall.sh
 
 USER=aurex \
-PASS=PASSWORD \
 KEY_URL=https://gist.githubusercontent.com/aurexs/d27be135ac167559ac0f4abd4dae7714/raw/3ede1a447776818a0f1e1ab0a6f721db7b052a2f/id_rsa.pub \
-HOST=myapp.uan.mx \
+HOST=nas.se.uan.mx \
 ./postinstall.sh
 ```
 
